@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { useWeb3React } from "@web3-react/core";
 import usePlatziPunks from "../../hooks/usePlatziPunks";
 import { useCallback, useEffect, useState } from "react";
+import useTruncatedAddress from "../../hooks/useTruncatedAddress"
 
 export const Home = () => {
   const [imageSrc, setImageSrc] = useState("");
@@ -174,7 +175,7 @@ export const Home = () => {
               <Badge ml={2}>
                 Address:
                 <Badge ml={1} colorScheme="green">
-                  {account}
+                  {useTruncatedAddress(account)}
                 </Badge>
               </Badge>
               <Badge ml={3}>
