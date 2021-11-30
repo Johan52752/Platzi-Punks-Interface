@@ -22,6 +22,7 @@ export const Home = () => {
   const [totalSupply, setTotalSupply]=useState();
   const toast = useToast();
   const platziPunks = usePlatziPunks();
+  const truncatedAddress=useTruncatedAddress(account);
 
   const getPlatziPunk = useCallback(async () => {
     if (platziPunks) {
@@ -175,7 +176,7 @@ export const Home = () => {
               <Badge ml={2}>
                 Address:
                 <Badge ml={1} colorScheme="green">
-                  {useTruncatedAddress(account)}
+                  {truncatedAddress}
                 </Badge>
               </Badge>
               <Badge ml={3}>
